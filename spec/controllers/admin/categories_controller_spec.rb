@@ -27,6 +27,13 @@ describe Admin::CategoriesController do
         :attributes => { :id => "category_container" }
     end
 
+    # Added RSpec for checking a valid id
+    it 'should have a valid id' do
+      assigns(:id).should_not be_nil
+      assert assigns(:id).valid?
+      assigns(:id).should_not be_nil
+    end
+    
     it 'should have valid category' do
       assigns(:category).should_not be_nil
       assert assigns(:category).valid?
